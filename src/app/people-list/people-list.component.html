@@ -1,16 +1,35 @@
 
-
 <table>
-  <tr>
-    <th><span>Character</span></th>
-    <th><span>Delete</span></th>
-  </tr>
-  <ng-container *ngFor="let p of peoples; let i=index">
-      <tr><th><span [ngStyle]="{'color': p.eye_color}">
+	<tr>
+		<th><span>Character</span></th>
+		<th><span>Delete</span></th>
+	</tr>
+	<ng-container *ngFor="let p of peoples; let i=index">
+		<tr>
+			<th><span [ngStyle]="{'color': p.eye_color}">
       {{p.name  }}
       </span></th>
-      <th><button (click)="deletePeople(i)">Delete</button>
-          <th>
-      </tr>
-  </ng-container>
+			<th><button (click)="deletePeople(i)">Delete</button>
+			<th>
+		</tr>
+	</ng-container>
 </table>
+<div style="height:50px"></div>
+<div class="navbar">
+	<div class="dropdown">
+		<button class="dropbtn">Dropdown 
+      <i class="fa fa-caret-down"></i>
+    </button>
+		<div class="dropdown-content">
+			<ng-container *ngFor="let p of peoples; let i=index">
+				<tr>
+					<th><span [ngStyle]="{'color': p.eye_color}">
+      {{p.name  }}
+      </span></th>
+					<th><button (click)="deletePeople(i)">Delete</button>
+					<th>
+				</tr>
+			</ng-container>
+		</div>
+	</div>
+</div>

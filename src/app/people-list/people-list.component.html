@@ -1,5 +1,4 @@
-
-<table>
+<table class="peoples">
 	<tr>
 		<th><span>Character</span></th>
 		<th><span>Delete</span></th>
@@ -21,7 +20,7 @@
       <i class="fa fa-caret-down"></i>
     </button>
 		<div class="dropdown-content">
-			<ng-container *ngFor="let p of peoples; let i=index">
+			<ng-container *ngFor="let p of peoples ; let i=index">
 				<tr>
 					<th><span [ngStyle]="{'color': p.eye_color}">
       {{p.name  }}

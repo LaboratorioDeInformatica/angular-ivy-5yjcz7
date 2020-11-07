@@ -13,6 +13,12 @@ export class AppComponent implements OnInit {
   constructor(private peopleService: PeopleService) {}
 
   ngOnInit(): void {
-    this.peopleService.getCustomers().subscribe(data => (this.peoples = data));
+    this.peopleService.getCustomers().subscribe(data => {
+      this.peoples = data.sort(function(a, b) {
+        var textA = a.name.toUpperCase();
+        var textB = b.name.toUpperCase();
+        return textA < textB ? -1 : textA > textB ? 1 : 0;
+      });
+    });
   }
 }

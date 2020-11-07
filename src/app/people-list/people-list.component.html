@@ -1,0 +1,16 @@
+
+
+<table>
+  <tr>
+    <th><span>Character</span></th>
+    <th><span>Delete</span></th>
+  </tr>
+  <ng-container *ngFor="let p of peoples; let i=index">
+      <tr><th><span [ngStyle]="{'color': p.eye_color}">
+      {{p.name  }}
+      </span></th>
+      <th><button (click)="deletePeople(i)">Delete</button>
+          <th>
+      </tr>
+  </ng-container>
+</table>
